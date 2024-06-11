@@ -1,23 +1,22 @@
 package estruturadedados;
 
 import java.util.Locale;
-import java.util.PriorityQueue;
-import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
 
-public class Ex01 {
+public class Ex02 {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		Queue<String> pessoas = new PriorityQueue<String>();
+		Stack<String> pessoas = new Stack<String>();
 		int opcao = 1;
 
 		System.out.println("************************************************");
-		System.out.println("       1 - Adicionar Cliente na Fila");
-		System.out.println("       2 - Listar todos os clientes");
-		System.out.println("       3 - Retirar Cliente da Fila");
+		System.out.println("       1 - Adicionar Livro na pilha");
+		System.out.println("       2 - Listar todos os Livros");
+		System.out.println("       3 - Retirar Livro da pilha");
 		System.out.println("       0 - Sair");
 		System.out.println("************************************************");
 		while (opcao != 0 && opcao > 0 && opcao < 4) {
@@ -32,17 +31,17 @@ public class Ex01 {
 				sc.nextLine();
 				pessoas.add(sc.nextLine());
 
-				System.out.println("\nFila:");
+				System.out.println("\nPilha:");
 				for (String pessoa : pessoas) {
 					System.out.println(pessoa);
 				}
-				System.out.println("\nCliente Adicionado!\n");
+				System.out.println("\nLivro Adicionado!\n");
 				break;
 			case 2:
 				if (pessoas.size() == 0) {
-					System.out.println("\nA Fila está vazia!\n");
+					System.out.println("\nA Pilha está vazia!\n");
 				} else {
-					System.out.println("\nLista de Clientes na fila:\n");
+					System.out.println("\nLista de Livros na fila:\n");
 					for (String pessoa : pessoas) {
 						System.out.println(pessoa);
 					}
@@ -51,21 +50,21 @@ public class Ex01 {
 				break;
 			case 3:
 				if (pessoas.size() == 0) {
-					System.out.println("\nA Fila está vazia!\n");
+					System.out.println("\nA Pilha está vazia!\n");
 				} else {
 					System.out.printf("Digite o nome: ");
 					sc.nextLine();
 					pessoas.remove(sc.nextLine());
 					if (pessoas.size() == 0) {
-						System.out.println("\nA Fila está vazia!\n");
+						System.out.println("\nA Pilha está vazia!\n");
 					} else {
-						System.out.println("\nFila:");
+						System.out.println("\nPilha:");
 						for (String pessoa : pessoas) {
 							System.out.println(pessoa);
 						}
 					}
 
-					System.out.println("\nO Cliente foi Chamado!\n");
+					System.out.println("\nUm Livro foi retirado da pilha!\n");
 				}
 				break;
 			case 0:

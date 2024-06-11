@@ -1,7 +1,7 @@
 package estruturadedados;
 
+import java.util.LinkedList;
 import java.util.Locale;
-import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class Ex01 {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		Queue<String> pessoas = new PriorityQueue<String>();
+		Queue<String> pessoas = new LinkedList<String>();
 		int opcao = 1;
 
 		System.out.println("************************************************");
@@ -22,7 +22,7 @@ public class Ex01 {
 		System.out.println("************************************************");
 		while (opcao != 0 && opcao > 0 && opcao < 4) {
 			do {
-				System.out.println("Entre com a opção desejada: ");
+				System.out.printf("Entre com a opção desejada: ");
 				opcao = sc.nextInt();
 			} while (opcao < 0 || opcao > 3);
 
@@ -53,9 +53,7 @@ public class Ex01 {
 				if (pessoas.size() == 0) {
 					System.out.println("\nA Fila está vazia!\n");
 				} else {
-					System.out.printf("Digite o nome: ");
-					sc.nextLine();
-					pessoas.remove(sc.nextLine());
+					pessoas.poll();
 					if (pessoas.size() == 0) {
 						System.out.println("\nA Fila está vazia!\n");
 					} else {

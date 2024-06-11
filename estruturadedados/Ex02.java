@@ -21,7 +21,7 @@ public class Ex02 {
 		System.out.println("************************************************");
 		while (opcao != 0 && opcao > 0 && opcao < 4) {
 			do {
-				System.out.println("Entre com a opção desejada: ");
+				System.out.printf("Entre com a opção desejada: ");
 				opcao = sc.nextInt();
 			} while (opcao < 0 || opcao > 3);
 
@@ -29,7 +29,7 @@ public class Ex02 {
 			case 1:
 				System.out.printf("Digite o nome: ");
 				sc.nextLine();
-				pessoas.add(sc.nextLine());
+				pessoas.push(sc.nextLine());
 
 				System.out.println("\nPilha:");
 				for (String pessoa : pessoas) {
@@ -52,9 +52,7 @@ public class Ex02 {
 				if (pessoas.size() == 0) {
 					System.out.println("\nA Pilha está vazia!\n");
 				} else {
-					System.out.printf("Digite o nome: ");
-					sc.nextLine();
-					pessoas.remove(sc.nextLine());
+					pessoas.pop();
 					if (pessoas.size() == 0) {
 						System.out.println("\nA Pilha está vazia!\n");
 					} else {

@@ -36,11 +36,9 @@ public class Ex01 {
 		System.out.println("       0 - Sair");
 		System.out.println("************************************************");
 		while (opcao != 0 && opcao > 0 && opcao < 4) {
-			do {
-				System.out.printf("Entre com a opção desejada: ");
-				opcao = sc.nextInt();
-			} while (opcao < 0 || opcao > 3);
-			// TODO: adicionar default opção Inválida
+			System.out.printf("Entre com a opção desejada: ");
+			opcao = sc.nextInt();
+
 			switch (opcao) {
 			case 1:
 				System.out.printf("Digite o nome: ");
@@ -84,6 +82,8 @@ public class Ex01 {
 			case 0:
 				System.out.println("\nPrograma Finalizado!");
 				break;
+			default:
+				System.err.println("\nOpção Inválida");
 			}
 		}
 		sc.close();
